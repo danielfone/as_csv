@@ -1,4 +1,4 @@
-if defined?(ActiveModel) && defined?(ActiveModel::Serialization)
+if defined? ActiveModel::Serialization
   module ActiveModel::Serialization
     def as_csv(options)
       serializable_hash(options)
