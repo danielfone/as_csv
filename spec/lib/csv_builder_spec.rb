@@ -1,4 +1,4 @@
-require 'as_csv'
+require 'spec_helper'
 
 describe AsCSV::CSVBuilder do
   subject(:csv_builder) { described_class.new records, options }
