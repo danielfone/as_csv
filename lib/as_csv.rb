@@ -1,5 +1,3 @@
+require "csv"
 require "as_csv/version"
-
-module AsCSV
-  # Your code goes here...
-end
+require "as_csv/csv_builder"
