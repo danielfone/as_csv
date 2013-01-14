@@ -1,3 +1,4 @@
 Dummy::Application.routes.draw do
-  resources :widgets
+  resources :render_widgets
+  resources :respond_with_widgets
 end

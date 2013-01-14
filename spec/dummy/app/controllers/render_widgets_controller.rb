@@ -1,4 +1,4 @@
-class WidgetsController < ApplicationController
+class RenderWidgetsController < ApplicationController
 
   def index
     respond_to do |format|
