@@ -1,5 +1,4 @@
-require 'active_model'
-require 'as_csv'
+require 'spec_helper'
 
 class Serializable
   include ActiveModel::Serialization
