@@ -8,7 +8,7 @@ module AsCSV
     end
 
     def to_csv
-      rows.collect { |row| CSV.generate_line row }.join if valid?
+      rows.collect { |row| CSVProxy.generate_line row }.join if valid?
     end
 
     def rows

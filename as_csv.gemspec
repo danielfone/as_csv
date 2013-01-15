@@ -20,4 +20,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rails", "~> 3.2"
   gem.add_development_dependency "rspec-rails", "~> 2.12"
   gem.add_development_dependency "sqlite3"
+  gem.add_development_dependency "fastercsv" if RUBY_VERSION < '1.9'
 end
