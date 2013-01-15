@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/danielfone/as_csv.png)](https://travis-ci.org/danielfone/as_csv)
 [![Dependency Status](https://gemnasium.com/danielfone/as_csv.png)](https://gemnasium.com/danielfone/as_csv)
-
+[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/danielfone/as_csv)
 
 This gem allows you to expose CSV in your apps as you'd expose JSON or XML.
 
