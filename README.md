@@ -161,3 +161,6 @@ bar2,bar2-description,,xyz98765
 6. Commit your changes (`git commit -am 'Add some feature'`)
 7. Push to the branch (`git push origin my-new-feature`)
 8. Create new Pull Request
+
+[![Build Status](https://travis-ci.org/danielfone/as_csv.png)](https://travis-ci.org/danielfone/as_csv)
+[![Dependency Status](https://gemnasium.com/danielfone/as_csv.png)](https://gemnasium.com/danielfone/as_csv)
