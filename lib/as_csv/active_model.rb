@@ -4,8 +4,8 @@ if defined? ActiveModel::Serialization
       attributes
     end
 
-    def to_csv(options={})
-      AsCSV::CSVBuilder.new(self, options).to_csv
+    def to_csv(*args)
+      [self].to_csv(*args)
     end
   end
 end

@@ -36,7 +36,7 @@ module AsCSV
       end
 
       def csv_hashes
-        @csv_hashes ||= records.collect { |r| r.as_csv if r.respond_to? :as_csv }.compact
+        @csv_hashes ||= records.collect { |r| r.as_csv(options) if r.respond_to? :as_csv }.compact
       end
 
       def data_row(csv_hash)
