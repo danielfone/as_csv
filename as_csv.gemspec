@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["daniel@fone.net.nz"]
   gem.description   = %q{Instant CSV support for Rails}
   gem.summary       = %q{Instant CSV support for Rails}
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/danielfone/as_csv"
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
