@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    as_csv (0.0.1.pre)
+    as_csv (1.0.0)
 
 GEM
   remote: https://rubygems.org/
