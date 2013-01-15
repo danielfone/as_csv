@@ -5,7 +5,7 @@ describe Widget do
   it { should respond_to :as_csv }
 
   describe 'dummy' do
-    subject(:dummy_widget) { Widget.create! name: "widget-name", description: 'widget-description', code: 1234 }
+    subject(:dummy_widget) { Widget.create! :name => "widget-name", :description => 'widget-description', :code => 1234 }
 
     describe :to_csv do
       subject { dummy_widget.to_csv }
@@ -21,10 +21,10 @@ describe Widget do
   describe 'collection' do
     before do
       Widget.create! [
-        { name: "widget-1", description: 'widget-description-1', code: 1001 },
-        { name: "widget-2", description: 'widget-description-2', code: 1002 },
-        { name: "widget-3", description: 'widget-description-3', code: 1003 },
-        { name: "widget-4", description: 'widget-description-4', code: 1004 },
+        { :name => "widget-1", :description => 'widget-description-1', :code => 1001 },
+        { :name => "widget-2", :description => 'widget-description-2', :code => 1002 },
+        { :name => "widget-3", :description => 'widget-description-3', :code => 1003 },
+        { :name => "widget-4", :description => 'widget-description-4', :code => 1004 },
       ]
     end
 

@@ -9,7 +9,7 @@ describe AsCSV::CSVBuilder do
 
   describe '#rows' do
     subject(:rows) { csv_builder.rows }
-    before { csv_builder.stub headers: headers, data_rows: data_rows, "valid?" => true }
+    before { csv_builder.stub :headers => headers, :data_rows => data_rows, "valid?" => true }
     let(:headers)   { %w(h1 h2) }
     let(:data_rows) { [%w(v11 v12), %w(v21 v22)] }
 
@@ -19,10 +19,10 @@ describe AsCSV::CSVBuilder do
   
   context 'with single record' do
     let(:records) do
-      stub(:foo, as_csv: {
-        first:  '1',
-        second: '2',
-        third:  '3'
+      stub(:foo, :as_csv => {
+        :first  => '1',
+        :second => '2',
+        :third  => '3'
       })
     end
 
@@ -40,10 +40,10 @@ first,second,third
     let(:records) { [record1, record2] }
     2.times do |i|
       let("record#{i+1}") do
-        stub(:foo, as_csv: {
-          first:  "1#{i}",
-          second: "2#{i}",
-          third:  "3#{i}"
+        stub(:foo, :as_csv => {
+          :first  => "1#{i}",
+          :second => "2#{i}",
+          :third  => "3#{i}"
         })
       end
     end
@@ -63,7 +63,7 @@ first,second,third
     let(:records) { [record1, record2] }
     2.times do |i|
       let("record#{i+1}") do
-        stub(:foo, as_csv: {
+        stub(:foo, :as_csv => {
           "first#{i}"  => "1#{i}",
           "second#{i}" => "2#{i}",
           "third#{i}"  => "3#{i}"
@@ -101,7 +101,7 @@ first0,second0,third0,first1,second1,third1
   end
 
   context 'with record `as_csv` != Hash' do
-    let(:records) { stub(:foo, as_csv: 'test') }
+    let(:records) { stub(:foo, :as_csv => 'test') }
 
     message = "expected as_csv to return Hash"
     ([:valid?] + EXPOSED_METHODS).each do |method|

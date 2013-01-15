@@ -2,15 +2,15 @@ module WidgetsControllerMixin
   def exercise_controller
     before do
       Widget.create! [
-        { name: "widget-1", description: 'widget-description-1', code: 1001 },
-        { name: "widget-2", description: 'widget-description-2', code: 1002 },
-        { name: "widget-3", description: 'widget-description-3', code: 1003 },
-        { name: "widget-4", description: 'widget-description-4', code: 1004 },
+        { :name => "widget-1", :description => 'widget-description-1', :code => 1001 },
+        { :name => "widget-2", :description => 'widget-description-2', :code => 1002 },
+        { :name => "widget-3", :description => 'widget-description-3', :code => 1003 },
+        { :name => "widget-4", :description => 'widget-description-4', :code => 1004 },
       ]
     end
 
     context 'GET show/1.csv' do
-      before { get :show, id: 1, format: :csv }
+      before { get :show, :id => 1, :format => :csv }
       describe 'response' do
         subject { response }
         its(:code) { should == "200" }
@@ -25,7 +25,7 @@ module WidgetsControllerMixin
     end
 
     context 'GET index.csv' do
-      before { get :index, format: :csv }
+      before { get :index, :format => :csv }
       describe 'response' do
         subject { response }
         its(:code) { should == "200" }

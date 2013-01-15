@@ -6,7 +6,7 @@ describe Array do
   it { should respond_to(:to_csv_without_builder) }
 
   context 'with objects responding to `as_csv`' do
-    before { subject << stub(:foo, as_csv: {header: 'value'})}
+    before { subject << stub(:foo, :as_csv => {:header => 'value'})}
 
     specify do
       AsCSV::CSVBuilder.any_instance.should_receive(:to_csv).and_call_original
