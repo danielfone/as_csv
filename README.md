@@ -7,6 +7,7 @@
 This gem allows you to expose CSV in your apps as you'd expose JSON or XML.
 
 Rails is not strictly required, but currently the magic only works with rails 3.x.
+
 Ruby 1.8 will work, but by default the order of the columns will not be guaranteed.
 
 ## Installation
