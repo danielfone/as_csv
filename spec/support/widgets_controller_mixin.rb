@@ -16,7 +16,7 @@ module WidgetsControllerMixin
         its(:code) { should == "200" }
         its(:content_type) { should == "text/csv" }
         its(:body) do
-          should = <<-CSV.strip_heredoc
+          should == <<-CSV.strip_heredoc
             id,name,description,code
             1,widget-1,widget-description-1,1001
           CSV
@@ -31,12 +31,12 @@ module WidgetsControllerMixin
         its(:code) { should == "200" }
         its(:content_type) { should == "text/csv" }
         its(:body) do
-          should = <<-CSV.strip_heredoc
-            id,name,description,code
-            1,widget-1,widget-description-1,1001
-            2,widget-2,widget-description-2,1002
-            3,widget-3,widget-description-3,1003
-            4,widget-4,widget-description-4,1004
+          should == <<-CSV.strip_heredoc
+            name,code,full
+            widget-1,1001,true
+            widget-2,1002,true
+            widget-3,1003,true
+            widget-4,1004,true
           CSV
         end
       end
