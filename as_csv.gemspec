@@ -18,7 +18,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_development_dependency "rails", "~> 3.2.0"
-  gem.add_development_dependency "rspec-rails", "~> 2.12.0"
+  gem.add_development_dependency "rspec-rails", "~> 2.13.0"
   gem.add_development_dependency "sqlite3"
   gem.add_development_dependency "fastercsv" if RUBY_VERSION < '1.9'
 end
