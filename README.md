@@ -14,7 +14,9 @@ Ruby 1.8 will work, but by default the order of the columns will not be guarante
 
 Add this line to your application's Gemfile:
 
-    gem 'as_csv'
+```ruby
+gem 'as_csv'
+```
 
 ## Basic Usage
 
