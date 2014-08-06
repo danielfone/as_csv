@@ -5,7 +5,7 @@ if defined? ActiveModel::Serialization
     end
 
     def to_csv(*args)
-      [self].to_csv(*args)
+      AsCSV::CSVBuilder.new(self, *args).to_csv
     end
   end
 end

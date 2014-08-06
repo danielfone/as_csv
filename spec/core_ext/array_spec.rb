@@ -1,27 +1,34 @@
 require 'spec_helper'
+require 'as_csv/core_ext/array'
 
 describe Array do
-  it { should respond_to(:to_csv) }
-  it { should respond_to(:to_csv_with_builder) }
-  it { should respond_to(:to_csv_without_builder) }
-
-  context 'with objects responding to `as_csv`' do
-    before { subject << stub(:foo, :as_csv => {:header => 'value'})}
-
-    specify do
-      AsCSV::CSVBuilder.any_instance.should_receive(:to_csv).and_call_original
-      subject.should_not_receive(:to_csv_without_builder)
-      subject.to_csv
-    end
+  subject(:array) do
+    [
+      stub(:foo, :as_csv => {:header => '1'}),
+      stub(:foo, :as_csv => {:header => '2'}),
+      stub(:foo, :as_csv => {:header1 => '3'}),
+    ]
   end
 
-  context 'without objects responding to `as_csv`' do
-    before { subject << 1 }
+  describe '#to_csv' do
+    subject { array.to_csv }
 
-    specify do
-      AsCSV::CSVBuilder.any_instance.should_receive(:to_csv).and_call_original
-      subject.should_receive(:to_csv_without_builder)
-      subject.to_csv
+    it 'should use :as_csv on its elements if present' do
+      should eq "header,header1\n1,\n2,\n,3\n"
+    end
+
+    context 'with mixed elements' do
+      before { array << 1 }
+      it 'should raise a TypeError' do
+        expect { subject }.to raise_error TypeError
+      end
+    end
+
+    context 'with literals' do
+      before { array.clear; array << 1 }
+      it 'should not use :as_csv' do
+        should eq "1\n"
+      end
     end
   end
 

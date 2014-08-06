@@ -1,18 +1,18 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Widget do
   it { should respond_to :to_csv }
   it { should respond_to :as_csv }
 
   describe 'dummy' do
-    subject(:dummy_widget) { Widget.create! :name => "widget-name", :description => 'widget-description', :code => 1234 }
+    subject(:dummy_widget) { Widget.new :name => "widget-name", :description => 'widget-description', :code => 1234 }
 
     describe :to_csv do
       subject { dummy_widget.to_csv }
       it do
         should == <<-CSV.strip_heredoc
           id,name,description,code
-          1,widget-name,widget-description,1234
+          ,widget-name,widget-description,1234
         CSV
       end
     end
