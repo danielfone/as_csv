@@ -1,4 +1,4 @@
-require "as_csv/csv_proxy"
+require "csv"
 
 module AsCSV
   class CSVBuilder
@@ -11,7 +11,7 @@ module AsCSV
     end
 
     def to_csv
-      rows.collect { |row| CSVProxy.generate_line row }.join
+      rows.collect { |row| CSV.generate_line row }.join
     end
 
     private
