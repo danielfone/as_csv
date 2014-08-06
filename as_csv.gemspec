@@ -20,6 +20,6 @@ Gem::Specification.new do |gem|
   # Tests
   gem.add_development_dependency "rails", ">= 3.0"
   gem.add_development_dependency "sqlite3" unless defined? JRUBY_VERSION
-  gem.add_development_dependency "rspec-rails", "~> 2.13.0"
+  gem.add_development_dependency "rspec-rails", "~> 3.0"
   gem.add_development_dependency "simplecov"
 end

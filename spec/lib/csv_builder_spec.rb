@@ -11,7 +11,7 @@ describe AsCSV::CSVBuilder do
 
     context 'with single record' do
       let(:records) do
-        stub(:foo, :as_csv => {
+        double(:foo, :as_csv => {
           :first  => '1',
           :second => '2',
           :third  => '3'
@@ -26,7 +26,7 @@ describe AsCSV::CSVBuilder do
     context 'with homogenous records' do
       let(:records) do
         2.times.map do |i|
-          stub(:foo, :as_csv => {
+          double(:foo, :as_csv => {
             :first  => "1#{i}",
             :second => "2#{i}",
             :third  => "3#{i}"
@@ -42,7 +42,7 @@ describe AsCSV::CSVBuilder do
     context 'with hetreogenous records' do
       let(:records) do
         2.times.map do |i|
-          stub(:foo, :as_csv => {
+          double(:foo, :as_csv => {
             "first#{i}"  => "1#{i}",
             "second#{i}" => "2#{i}",
             "third#{i}"  => "3#{i}"
@@ -59,7 +59,7 @@ describe AsCSV::CSVBuilder do
     end
 
     context 'with record not respond_to? `as_csv`' do
-      let(:records) { stub(:foo) }
+      let(:records) { double(:foo) }
 
       it 'should raise an error' do
         expect { builder.to_csv }.to raise_error TypeError
@@ -67,7 +67,7 @@ describe AsCSV::CSVBuilder do
     end
 
     context 'with record `as_csv` != Hash' do
-      let(:records) { stub(:foo, :as_csv => 'test') }
+      let(:records) { double(:foo, :as_csv => 'test') }
 
       it 'should raise an error' do
         expect { builder.to_csv }.to raise_error TypeError

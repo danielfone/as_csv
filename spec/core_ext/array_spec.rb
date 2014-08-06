@@ -4,9 +4,9 @@ require 'as_csv/core_ext/array'
 describe Array do
   subject(:array) do
     [
-      stub(:foo, :as_csv => {:header => '1'}),
-      stub(:foo, :as_csv => {:header => '2'}),
-      stub(:foo, :as_csv => {:header1 => '3'}),
+      double(:foo, :as_csv => {:header => '1'}),
+      double(:foo, :as_csv => {:header => '2'}),
+      double(:foo, :as_csv => {:header1 => '3'}),
     ]
   end
 
