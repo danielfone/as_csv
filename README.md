@@ -137,6 +137,28 @@ class Widget < ActiveRecord::Base
 end
 ```
 
+### Heterogenous Arrays
+You can render any Array of objects that respond to `as_csv`.
+
+```ruby
+class Foo < ActiveRecord::Base
+  # attributes: name, description, code
+end
+```
+```ruby
+class Bar < ActiveRecord::Base
+  # attributes: name, description, barcode
+end
+```
+```
+> puts (Foo.all + Bar.all).to_csv
+name,description,code,barcode
+foo1,foo1-description,111,
+foo2,foo2-description,222,
+bar1,bar1-description,,acb12345
+bar2,bar2-description,,xyz98765
+```
+
 ## Contributing
 
 1. Fork it
