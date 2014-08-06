@@ -2,7 +2,7 @@ class RenderWidgetsController < ApplicationController
 
   def index
     respond_to do |format|
-      format.csv { render :csv => WidgetWithOptions.scoped, :style => :full }
+      format.csv { render :csv => WidgetWithOptions.all, :style => :full }
     end
   end
 
