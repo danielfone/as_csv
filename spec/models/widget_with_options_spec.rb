@@ -1,7 +1,7 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe WidgetWithOptions do
-  subject(:widget) { described_class.new :name => 'widget-name', :code => 1234 }
+  subject(:widget) { WidgetWithOptions.new :name => 'widget-name', :code => 1234 }
 
   describe :to_csv do
     subject { widget.to_csv(options) }

@@ -79,7 +79,7 @@ id,name,description,code
 > puts Widget.first.to_csv
 id,name,description,code
 1,widget-1,widget-description-1,1001
- => nil 
+ => nil
 ```
 
 Behind the scenes, any classes that `include ActiveModel::Serialization` will expose their `attributes` with `to_csv`.
@@ -107,7 +107,7 @@ widget-1,1001
 widget-2,1002
 widget-3,1003
 widget-4,1004
- => nil 
+ => nil
 >
 ```
 
