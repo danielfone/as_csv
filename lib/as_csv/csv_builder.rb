@@ -1,4 +1,4 @@
-require "csv"
+require 'csv'
 
 module AsCSV
   class CSVBuilder
