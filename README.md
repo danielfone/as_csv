@@ -159,6 +159,19 @@ bar1,bar1-description,,acb12345
 bar2,bar2-description,,xyz98765
 ```
 
+### stdlib CSV options
+If you need to pass any options to the underlying CSV library
+[docs](http://docs.ruby-lang.org/en/2.0.0/CSV.html#method-c-new):
+
+```
+> puts (Foo.all + Bar.all).to_csv csv_options: {col_sep:'|'}
+name|description|code|barcode
+foo1|foo1-description|111|
+foo2|foo2-description|222|
+bar1|bar1-description||acb12345
+bar2|bar2-description||xyz98765
+```
+
 ## Contributing
 
 1. Fork it
