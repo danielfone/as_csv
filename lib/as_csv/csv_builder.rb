@@ -2,17 +2,17 @@ require 'csv'
 
 module AsCSV
   class CSVBuilder
-    attr_reader :records, :options, :csv_options
+    attr_reader :records, :options
 
-    def initialize(records, options={}, csv_options={})
+    def initialize(records, options={})
       @records = Array(records)
       @options = options
-      @csv_options = csv_options
+      @options[:csv_options] ||= {}
       validate
     end
 
     def to_csv
-      rows.collect { |row| CSV.generate_line row, csv_options }.join
+      rows.collect { |row| CSV.generate_line row, @options[:csv_options] }.join
     end
 
     private

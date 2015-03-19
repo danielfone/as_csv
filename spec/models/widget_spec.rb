@@ -22,7 +22,7 @@ describe Widget do
     subject(:dummy_widget) { Widget.new :name => "widget-name", :description => 'widget-description', :code => 1234 }
 
     describe :to_csv do
-      subject { dummy_widget.to_csv({}, col_sep:'|')}
+      subject { dummy_widget.to_csv(csv_options: {col_sep:'|'})}
       it do
         should == <<-CSV.strip_heredoc
           id|name|description|code
