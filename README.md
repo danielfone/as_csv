@@ -160,8 +160,9 @@ bar2,bar2-description,,xyz98765
 ```
 
 ### stdlib CSV options
-If you need to pass any options to the underlying CSV library
-[docs](http://docs.ruby-lang.org/en/2.0.0/CSV.html#method-c-new):
+If you need to pass any [options](http://docs.ruby-lang.org/en/2.0.0/CSV.html#method-c-new)
+to the underlying CSV library:
+
 
 ```
 > puts (Foo.all + Bar.all).to_csv csv_options: {col_sep:'|'}
