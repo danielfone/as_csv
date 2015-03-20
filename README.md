@@ -2,7 +2,7 @@
 
 [![Gem Version](https://badge.fury.io/rb/as_csv.svg)](http://badge.fury.io/rb/as_csv)
 [![Build Status](https://travis-ci.org/danielfone/as_csv.svg)](https://travis-ci.org/danielfone/as_csv)
-[![Build Status](https://travis-ci.org/danielfone/as_csv.svg)](https://travis-ci.org/danielfone/as_csv)
+[![Dependency Status](https://gemnasium.com/danielfone/as_csv.svg)](https://gemnasium.com/danielfone/as_csv)
 [![Code Climate](https://codeclimate.com/github/danielfone/as_csv/badges/gpa.svg)](https://codeclimate.com/github/danielfone/as_csv)
 
 This gem allows you to expose CSV in your apps as you'd expose JSON or XML.
