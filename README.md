@@ -1,12 +1,13 @@
 # AsCSV
 
-[![Build Status](https://travis-ci.org/danielfone/as_csv.png)](https://travis-ci.org/danielfone/as_csv)
-[![Dependency Status](https://gemnasium.com/danielfone/as_csv.png)](https://gemnasium.com/danielfone/as_csv)
-[![Code Climate](https://codeclimate.com/github/danielfone/as_csv.png)](https://codeclimate.com/github/danielfone/as_csv)
+[![Gem Version](https://badge.fury.io/rb/as_csv.svg)](http://badge.fury.io/rb/as_csv)
+[![Build Status](https://travis-ci.org/danielfone/as_csv.svg)](https://travis-ci.org/danielfone/as_csv)
+[![Build Status](https://travis-ci.org/danielfone/as_csv.svg)](https://travis-ci.org/danielfone/as_csv)
+[![Code Climate](https://codeclimate.com/github/danielfone/as_csv/badges/gpa.svg)](https://codeclimate.com/github/danielfone/as_csv)
 
 This gem allows you to expose CSV in your apps as you'd expose JSON or XML.
 
-Rails is not strictly required, but currently the magic only works with rails 3.x.
+Rails is not strictly required, but currently the magic only works with Rails > 3.x.x.
 
 Ruby 1.8 will work, but by default the order of the columns will not be guaranteed.
 
@@ -15,7 +16,7 @@ Ruby 1.8 will work, but by default the order of the columns will not be guarante
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'as_csv'
+gem 'as_csv', '~> 2.0'
 ```
 
 ## Basic Usage
@@ -159,7 +160,7 @@ bar1,bar1-description,,acb12345
 bar2,bar2-description,,xyz98765
 ```
 
-### stdlib CSV options
+### Stdlib CSV options
 If you need to pass any [options](http://docs.ruby-lang.org/en/2.0.0/CSV.html#method-c-new)
 to the underlying CSV library:
 
