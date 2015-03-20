@@ -18,6 +18,20 @@ describe Widget do
     end
   end
 
+  describe 'dummy with csv options' do
+    subject(:dummy_widget) { Widget.new :name => "widget-name", :description => 'widget-description', :code => 1234 }
+
+    describe :to_csv do
+      subject { dummy_widget.to_csv(csv_options: {col_sep:'|'})}
+      it do
+        should == <<-CSV.strip_heredoc
+          id|name|description|code
+          |widget-name|widget-description|1234
+        CSV
+      end
+    end
+  end
+
   describe 'collection' do
     before do
       Widget.create! [

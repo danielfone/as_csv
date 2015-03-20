@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
 
   gem.add_runtime_dependency "activemodel", '>= 3.0'
   gem.add_runtime_dependency "actionpack", '>= 3.0'
+  gem.add_runtime_dependency "responders"
 
   # Tests
   gem.add_development_dependency "rails", ">= 3.0"

@@ -4,6 +4,7 @@ require 'rails/all'
 
 Bundler.require
 require "as_csv"
+require "responders"
 
 module Dummy
   class Application < Rails::Application
