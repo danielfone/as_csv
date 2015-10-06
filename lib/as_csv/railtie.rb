@@ -11,5 +11,6 @@ module ActiveModel::Serialization
 end
 
 ActionController::Renderers.add :csv do |obj, options|
+  response.headers['Content-Disposition'] = 'attachment'
   obj.respond_to?(:to_csv) ? obj.to_csv(options) : obj
 end
