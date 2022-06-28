@@ -14,13 +14,13 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = %w[lib]
 
-  gem.add_runtime_dependency "activemodel", '>= 3.0'
-  gem.add_runtime_dependency "actionpack", '>= 3.0'
+  gem.add_runtime_dependency "activemodel", '>= 7.0'
+  gem.add_runtime_dependency "actionpack", '>= 7.0'
   gem.add_runtime_dependency "responders"
 
   # Tests
-  gem.add_development_dependency "rails", ">= 3.0"
+  gem.add_development_dependency "rails", "~> 7.0"
   gem.add_development_dependency "sqlite3" unless defined? JRUBY_VERSION
-  gem.add_development_dependency "rspec-rails", "~> 3.0"
+  gem.add_development_dependency "rspec-rails", "~> 5.1"
   gem.add_development_dependency "simplecov"
 end

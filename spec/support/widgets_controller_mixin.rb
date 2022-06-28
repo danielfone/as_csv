@@ -10,10 +10,10 @@ module WidgetsControllerMixin
     end
 
     describe 'GET show/1.csv' do
-      before { get :show, :id => 1, :format => :csv }
+      before { get :show, :params => {  :id => 1 }, :format => :csv }
       it 'should respond with the CSV' do
         expect(response.code).to eq "200"
-        expect(response.content_type).to eq "text/csv"
+        expect(response.content_type).to include "text/csv"
         expect(response.body).to eq <<-CSV.strip_heredoc
           id,name,description,code
           1,widget-1,widget-description-1,1001
@@ -25,7 +25,7 @@ module WidgetsControllerMixin
       before { get :index, :format => :csv }
       it 'should respond with the CSV' do
         expect(response.code).to eq "200"
-        expect(response.content_type).to eq "text/csv"
+        expect(response.content_type).to include "text/csv"
         expect(response.body).to eq  <<-CSV.strip_heredoc
           name,code,full
           widget-1,1001,true

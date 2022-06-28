@@ -12,7 +12,7 @@ module AsCSV
     end
 
     def to_csv
-      rows.collect { |row| CSV.generate_line row, csv_options }.join
+      rows.collect { |row| CSV.generate_line row, **csv_options }.join
     end
 
     private
