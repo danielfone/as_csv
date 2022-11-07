@@ -10,7 +10,7 @@ module WidgetsControllerMixin
     end
 
     describe 'GET show/1.csv' do
-      before { get :show, :id => 1, :format => :csv }
+      before { get :show, params: { :id => 1 }, :format => :csv }
       it 'should respond with the CSV' do
         expect(response.code).to eq "200"
         expect(response.content_type).to eq "text/csv"
