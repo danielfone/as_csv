@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "actionpack", '>= 3.0'
 
   # Tests
-  gem.add_development_dependency "rails", "~> 6.0"
+  gem.add_development_dependency "rails", "~> 7.0"
   gem.add_development_dependency "sqlite3" unless defined? JRUBY_VERSION
   gem.add_development_dependency "rspec-rails", "~> 6.0"
   gem.add_development_dependency "simplecov"
