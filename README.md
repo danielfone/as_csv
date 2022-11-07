@@ -21,24 +21,7 @@ gem 'as_csv', '~> 2.0'
 
 ## Basic Usage
 
-Simply add `respond_to :csv` in a controller
-
-```ruby
-class WidgetsController < ApplicationController
-  respond_to :xml, :json, :csv
-
-  def index
-    respond_with Widget.all
-  end
-
-  def show
-    respond_with Widget.find(params[:id])
-  end
-
-end
-```
-
-Alternatively:
+Simply render CSV in a controller
 
 ```ruby
 class WidgetsController < ApplicationController
@@ -184,5 +167,3 @@ bar2|bar2-description||xyz98765
 6. Commit your changes (`git commit -am 'Add some feature'`)
 7. Push to the branch (`git push origin my-new-feature`)
 8. Create new Pull Request
-
-

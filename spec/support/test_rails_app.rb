@@ -3,7 +3,6 @@
 #
 require 'action_controller/railtie'
 require 'active_record/railtie'
-require 'responders'
 require 'as_csv'
 
 # Initialize in-memory db
@@ -58,19 +57,6 @@ class RenderWidgetsController < ActionController::Base
     respond_to do |format|
       format.csv { render :csv => Widget.find(params[:id]) }
     end
-  end
-
-end
-
-class RespondWithWidgetsController < ActionController::Base
-  respond_to :csv
-
-  def index
-    respond_with WidgetWithOptions.all, :style => :full
-  end
-
-  def show
-    respond_with Widget.find(params[:id])
   end
 
 end

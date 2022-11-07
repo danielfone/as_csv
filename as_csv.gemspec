@@ -10,17 +10,17 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Instant CSV support for Rails}
   gem.homepage      = "https://github.com/danielfone/as_csv"
 
+  # TODO: clean files
   gem.files         = `git ls-files`.split($/)
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = %w[lib]
 
-  gem.add_runtime_dependency "activemodel", '>= 3.0'
-  gem.add_runtime_dependency "actionpack", '>= 3.0'
-  gem.add_runtime_dependency "responders"
+  gem.add_dependency "activemodel", '>= 3.0'
+  gem.add_dependency "actionpack", '>= 3.0'
 
   # Tests
-  gem.add_development_dependency "rails", "~> 5.0"
+  gem.add_development_dependency "rails", "~> 6.0"
   gem.add_development_dependency "sqlite3" unless defined? JRUBY_VERSION
-  gem.add_development_dependency "rspec-rails", "~> 3.0"
+  gem.add_development_dependency "rspec-rails", "~> 6.0"
   gem.add_development_dependency "simplecov"
 end
