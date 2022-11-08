@@ -1,14 +1,6 @@
-require 'as_csv/csv_builder'
+require 'as_csv/active_model/serialization/csv'
 
-module ActiveModel::Serialization
-  def as_csv(options={})
-    attributes
-  end
-
-  def to_csv(*args)
-    AsCSV::CSVBuilder.new(self, *args).to_csv
-  end
-end
+ActiveModel::Serialization.send :include, AsCSV::ActiveModel::Serialization::CSV
 
 ActionController::Renderers.add :csv do |obj, options|
   response.headers['Content-Disposition'] = 'attachment'
