@@ -1,8 +1,6 @@
 # AsCSV
 
 [![Gem Version](https://badge.fury.io/rb/as_csv.svg)](http://badge.fury.io/rb/as_csv)
-[![Build Status](https://travis-ci.org/danielfone/as_csv.svg)](https://travis-ci.org/danielfone/as_csv)
-[![Dependency Status](https://gemnasium.com/danielfone/as_csv.svg)](https://gemnasium.com/danielfone/as_csv)
 [![Code Climate](https://codeclimate.com/github/danielfone/as_csv/badges/gpa.svg)](https://codeclimate.com/github/danielfone/as_csv)
 
 This gem allows you to expose CSV in your apps as you'd expose JSON or XML.
@@ -14,7 +12,7 @@ Rails is not strictly required, but currently the magic only works with Rails > 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'as_csv', '~> 2.0'
+gem 'as_csv', '~> 3.0'
 ```
 
 ## Basic Usage

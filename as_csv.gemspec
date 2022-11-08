@@ -9,14 +9,13 @@ Gem::Specification.new do |gem|
   gem.description   = %q{Instant CSV support for Rails}
   gem.summary       = %q{Instant CSV support for Rails}
   gem.homepage      = "https://github.com/danielfone/as_csv"
+  gem.license       = "MIT"
 
-  # TODO: clean files
-  gem.files         = `git ls-files`.split($/)
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.files         = Dir["CHANGELOG.md", "README.md", "LICENSE.txt", "lib/**/*"]
   gem.require_paths = %w[lib]
 
-  gem.add_dependency "activemodel", '>= 3.0'
-  gem.add_dependency "actionpack", '>= 3.0'
+  gem.add_dependency "activemodel", '>= 5.0'
+  gem.add_dependency "actionpack", '>= 5.0'
 
   # Tests
   gem.add_development_dependency "rails"
