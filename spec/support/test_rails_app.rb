@@ -11,8 +11,6 @@ ENV['DATABASE_URL'] = 'sqlite3::memory:'
 # A minimal test rails application
 class TestRailsApp < Rails::Application
   config.eager_load = false
-  # To avoid deprecation warnings in newer versions of Rails
-  config.active_record.legacy_connection_handling = Rails::VERSION::MAJOR < 6
 end
 
 # Define our models
