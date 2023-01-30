@@ -5,18 +5,17 @@ require 'action_controller/railtie'
 require 'active_record/railtie'
 require 'as_csv'
 
-# Initialize in-memory db
-ActiveRecord::Base.establish_connection(adapter: "sqlite3", database: ":memory:")
-ActiveRecord::Schema.define(version: 1) do
+# Configure in-memory db
+ENV['DATABASE_URL'] = 'sqlite3::memory:'
 
-  create_table "widgets", :force => true do |t|
-    t.string   "name"
-    t.string   "description"
-    t.integer  "code"
-  end
-
+# A minimal test rails application
+class TestRailsApp < Rails::Application
+  config.eager_load = false
+  # To avoid deprecation warnings in newer versions of Rails
+  config.active_record.legacy_connection_handling = Rails::VERSION::MAJOR < 6
 end
 
+# Define our models
 class Widget < ActiveRecord::Base
 end
 
@@ -27,24 +26,12 @@ class WidgetWithOptions < Widget
     case style
     when :full then attributes.slice('name', 'code').merge({:full => true})
     when :short then attributes.slice('name', 'code')
-    else raise "options[:style] must be :full or :short"
     end
   end
 
 end
 
-# A minimal test rails application
-class TestRailsApp < Rails::Application
-  config.eager_load = false
-  config.logger = Logger.new($stdout)
-  Rails.logger  = config.logger
-
-  routes.draw do
-    resources :render_widgets
-    resources :respond_with_widgets
-  end
-end
-
+# Define our controller
 class RenderWidgetsController < ActionController::Base
 
   def index
@@ -59,4 +46,22 @@ class RenderWidgetsController < ActionController::Base
     end
   end
 
+end
+
+# Initialize the rails app
+TestRailsApp.initialize!
+
+# Create our in-memory database
+ActiveRecord::Schema.define(version: 1) do
+  create_table "widgets", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "code"
+  end
+end
+
+# Define our routes
+Rails.application.routes.draw do
+  resources :render_widgets
+  resources :respond_with_widgets
 end
