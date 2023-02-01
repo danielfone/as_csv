@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [3.0.1] - 2022-11-08
+
+### Fixed
+
+- Improved support for Rails 7 by using a proper Railtie.
+
 ## [3.0.0] - 2022-11-08
 
 ### Added
