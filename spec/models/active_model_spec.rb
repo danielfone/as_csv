@@ -13,4 +13,3 @@ end
 describe NonSerializable do
   it { should_not respond_to :as_csv }
 end
-
