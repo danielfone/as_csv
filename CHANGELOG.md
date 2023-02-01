@@ -44,6 +44,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 - Pretty sure this is actually backwards compat. Sorry.
 
+[3.0.1]: https://github.com/danielfone/as_csv/compare/v3.0.0...v3.0.1
 [3.0.0]: https://github.com/danielfone/as_csv/compare/v2.0.2...v3.0.0
 [2.0.2]: https://github.com/danielfone/as_csv/compare/v2.0.1...v2.0.2
 [2.0.1]: https://github.com/danielfone/as_csv/compare/v2.0.0...v2.0.1
